@@ -1,7 +1,7 @@
 #include<iostream>
 #include "array_tools.h"
 using namespace std;
-int main(int argc, char const *argv[])
+int main()
 {
   int size,a,choice;
   cout<<"Enter size of array"<<endl;
@@ -24,15 +24,20 @@ int main(int argc, char const *argv[])
     rotate_array(my_array,size);
     output_array(my_array,size);
     break;
-/*    case 3:
+    case 3:
     sort_array(my_array,size);
+    output_array(my_array,size);
     break;
     case 4:
-    search_array(my_array,size);
+    int item,keeper=0;
+    cout<<"\nEnter item to search\n";
+    cin>>item;
+    search_array(my_array,size,item,keeper);
     break;
     case 5:
+    
     sorted_search_array(my_array,size);
-    break; */
+    break;
     default:
     cout << "Invalid choice" << '\n';
 

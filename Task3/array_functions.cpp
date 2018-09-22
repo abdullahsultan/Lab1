@@ -50,3 +50,34 @@ int rotate_array(int a[],int size)
   else
   std::cout<<"\nInvalid choice";
 }
+
+
+int sort_array(int a[],int size)
+{
+  int temp;
+  for(int x=0;x<size;x++)
+  {
+    for(int y=x+1;y<size;y++)
+    {
+      if(a[x]>a[y])
+      {temp=a[x];
+      a[x]=a[y];
+      a[y]=temp;}
+    }
+  }
+
+}
+
+int search_array(int a[],int size,int item,int keeper)
+{
+   if(a[keeper]==item)
+   std::cout<<"\nYour searched item is at"<<keeper;
+   else if(keeper>size)
+   {std::cout << "\nYour searched item not found" << '\n';
+   return 0;}
+
+   else
+   {keeper++;
+   search_array(a,size,item,keeper);}
+
+}
