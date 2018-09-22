@@ -20,10 +20,11 @@ int main(int argc, char const *argv[])
     reverse_array(my_array,size);
     output_array(my_array,size);
     break;
-  /*  case 2:
+    case 2:
     rotate_array(my_array,size);
+    output_array(my_array,size);
     break;
-    case 3:
+/*    case 3:
     sort_array(my_array,size);
     break;
     case 4:
