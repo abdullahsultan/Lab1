@@ -31,16 +31,22 @@ int rotate_array(int a[],int size)
   {
     int aray[step];
     for(int x=0;x<step;x++)
-    {
       aray[x]=a[x];
-    }
     for(int x=step,y=0;x<size;x++,y++)
-    {
       a[y]=a[x];
-    }
     for(int x=size-1,y=step-1;   y>=0   ;x--,y--)
-    {
       a[x]=aray[y];
-    }
   }
+  else if (choice=='L' || choice=='l')
+  {
+    int aray[step];
+    for(int x=size-1,y=step-1;y>=0;x--,y--)
+     aray[y]=a[x];
+    for(int x=(size-step)-1,y=size-1;  x>=0  ;x--,y--)
+     a[y]=a[x];
+    for(int x=0; x<step ;x++)
+     a[x]=aray[x];
+  }
+  else
+  std::cout<<"\nInvalid choice";
 }
