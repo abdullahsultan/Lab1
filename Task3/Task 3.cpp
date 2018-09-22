@@ -29,13 +29,12 @@ int main()
     output_array(my_array,size);
     break;
     case 4:
-    int item,keeper=0;
+    {int item,keeper=0;
     cout<<"\nEnter item to search\n";
     cin>>item;
-    search_array(my_array,size,item,keeper);
+    search_array(my_array,size,item,keeper);}
     break;
     case 5:
-    
     sorted_search_array(my_array,size);
     break;
     default:

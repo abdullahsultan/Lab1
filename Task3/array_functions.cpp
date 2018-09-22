@@ -71,7 +71,7 @@ int sort_array(int a[],int size)
 int search_array(int a[],int size,int item,int keeper)
 {
    if(a[keeper]==item)
-   std::cout<<"\nYour searched item is at"<<keeper;
+   std::cout<<"\nYour searched item is at\n"<<keeper;
    else if(keeper>size)
    {std::cout << "\nYour searched item not found" << '\n';
    return 0;}
@@ -79,5 +79,13 @@ int search_array(int a[],int size,int item,int keeper)
    else
    {keeper++;
    search_array(a,size,item,keeper);}
+}
 
+int sorted_search_array(int a[],int size)
+{
+  sort_array(a,size);
+  int item,keeper=0;
+  std::cout<<"\n Enter item to be searched \n";
+  std::cin>>item;
+  search_array(a,size,item,keeper);
 }
