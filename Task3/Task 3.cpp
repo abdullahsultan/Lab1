@@ -12,7 +12,7 @@ int main()
     cout<<"Enter value No "<<a<<endl;
     cin>>my_array[a];
   }
-  cout<<" Enter 1 to Reverse Array \n Enter 2 to Rotate Array \n Enter 3 to Sort array \n Enter 4 to Search Array(Unsorted) \n Enter 5 to Serach Array(Sorted) \n";
+  cout<<" Enter 1 to Reverse Array \n Enter 2 to Rotate Array \n Enter 3 to Sort array \n Enter 4 to Search Array\n";
   cin>>choice;
   switch (choice)
   {
@@ -29,14 +29,22 @@ int main()
     output_array(my_array,size);
     break;
     case 4:
-    {int item,keeper=0;
-    cout<<"\nEnter item to search\n";
-    cin>>item;
-    search_array(my_array,size,item,keeper);}
-    break;
-    case 5:
-    sorted_search_array(my_array,size);
-    break;
+    {
+      int item,keeper=0;
+      std::cout<<"Enter number to be searched \n \n \n";
+      std::cin>>item;
+      for(int x=0,y=x+1;y<size;x++,y++)
+      {
+        if(my_array[x]>my_array[y])
+        {std::cout<<"Your array is not sorted \n";
+        keeper=0;
+          search_array(my_array,size,item,keeper);
+        return 0;}
+      }
+      cout<<"Your array is sorted applying Binary Search \n";
+      sorted_search_array(my_array,size,item);
+      break;
+    }
     default:
     cout << "Invalid choice" << '\n';
 
