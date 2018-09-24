@@ -21,7 +21,8 @@ int yearly_savings(int years,int savings,int intrests,int total)
   cout<<"Enter savings of year "<<x<<endl;
   cin>>savings;
   i=(savings*intrests)/100;
-  total=savings+intrests+total;
+  total=savings+total+i;
   }
   return total;
 }
+//  total=((savings*intrests)/100)+savings+total 
