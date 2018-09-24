@@ -12,7 +12,7 @@ int main()
     cout<<"Enter value No "<<a<<endl;
     cin>>my_array[a];
   }
-  cout<<" Enter 1 to Reverse Array \n Enter 2 to Rotate Array \n Enter 3 to Sort array \n Enter 4 to Search Array\n";
+  cout<<"\n\nEnter 1 to Reverse Array \nEnter 2 to Rotate Array \nEnter 3 to Sort array \nEnter 4 to Search Array\n";
   cin>>choice;
   switch (choice)
   {
@@ -30,8 +30,8 @@ int main()
     break;
     case 4:
     {
-      int item,keeper=0;
-      std::cout<<"Enter number to be searched \n \n \n";
+      int item,keeper=0,fst=0,lst=size-1;
+      std::cout<<"\nEnter number to be searched: ";
       std::cin>>item;
       for(int x=0,y=x+1;y<size;x++,y++)
       {
@@ -42,7 +42,7 @@ int main()
         return 0;}
       }
       cout<<"Your array is sorted applying Binary Search \n";
-      sorted_search_array(my_array,size,item);
+      sorted_search_array(my_array,size,item,fst,lst);
       break;
     }
     default:

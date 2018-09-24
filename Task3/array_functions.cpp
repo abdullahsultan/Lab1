@@ -81,31 +81,28 @@ int search_array(int a[],int size,int item,int keeper)
    search_array(a,size,item,keeper);}
 }
 
-int sorted_search_array(int a[],int size,int key)
+int sorted_search_array(int a[],int size,int key,int fst,int lst)
 {
-  int fst,lst;
-  while(true)
-  {
       if(a[(fst+lst)/2]==key)
       {
-          std::cout<<"Searched key is at"<<(fst+lst)/2;
-          break;
+          std::cout<<"Searched key is at"<<(fst+lst)/2<<"\n";
+          return 0;
       }
       if(a[size-1]==key)
 
       {
           std::cout<<"Key is at "<<size-1<<std::endl;
-          break;
+          return 0;
       }
 
       if(key > a[(fst+lst)/2])
           fst=(fst+lst)/2;
-      if(key < a[(fst+lst)/2])
+      else if(key < a[(fst+lst)/2])
           lst=(fst+lst)/2;
-      if((fst+lst)/2==fst)
+      else if((fst+lst)/2==fst)
       {
           std::cout<<"Key not found \n";
-          break;
+          return 0;
       }
-  }
+    sorted_search_array(a,size,key,fst,lst);
 }
